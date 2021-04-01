@@ -1,0 +1,29 @@
+:root {
+    --blue: #049DD9;
+    --green: #14A647;
+    --yellow: #F2C84B;
+    --rojo: #F24E29;
+    --pink: #F2B9B3;
+}
+
+.hour-box {
+    background-color: var(--green);
+    display:flex;
+    align-items: center;
+    border-radius: 0.25rem 0rem 0rem 0.25rem;
+    color: #FFFFFF;
+    border: 1px solid transparent;
+}
+
+body {
+    background-color: var(--yellow);
+}
+
+button{
+    background-color: var(--green);
+}
+
+.jumbotron{
+    background: var(--green);
+}
+
