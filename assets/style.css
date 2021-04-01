@@ -23,7 +23,11 @@ button{
     background-color: var(--green);
 }
 
+header{
+    color: var(--white);
+}
+
 .jumbotron{
-    background: var(--green);
+    background: var(--blue);
 }
 
