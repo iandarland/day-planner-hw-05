@@ -26,7 +26,7 @@ $('.custom-submit').on('click', function(){
 
 // setting styling by hour and disabling button and input boxes for times in the past
 $(".hour-box").each(function(index){
-    if(parseInt(moment($(this).text().trim(), ["h:mm A"]).format("H")) > moment().format('H')){
+    if(parseInt(moment($(this).text().trim(), ["h:mm A"]).format("H")) < moment().format('H')){
         $(this).css('background', "#F24E29").siblings('button').css('background', "#F24E29").prop('disabled', 'true').siblings("input").prop('disabled', 'true')
     }else if (moment($(this).text().trim(), ["h:mm A"]).format("H") === moment().format('H')){
         $(this).css('background', '#F2B9B3').siblings('button').css('background', '#F2B9B3')
@@ -36,7 +36,7 @@ $(".hour-box").each(function(index){
 //Populating saved values in the dom
 $('.hour-box').each(function(index){
     var toGet = JSON.stringify($(this).text().trim())
-    for (i = 0; i < pulledTodos.length; i++){
+    for (var i = 0; i < pulledTodos.length; i++){
         console.log(pulledTodos[i].timeStamp)
         if(JSON.stringify(pulledTodos[i].timeStamp)===toGet){
             $(this).siblings('input').val(pulledTodos[i].todo);
