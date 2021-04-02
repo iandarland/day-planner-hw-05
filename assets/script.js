@@ -1,8 +1,8 @@
 //Setting universal variables
 var body = $('.container');
 var times = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
-var pulledTodos = JSON.parse(localStorage.getItem(saved))|| []
 var saved = JSON.stringify(moment().format("MMM Do YY"));  
+var pulledTodos = JSON.parse(localStorage.getItem(saved))|| []
 
 //Setting function update clock
 var update = function() {
