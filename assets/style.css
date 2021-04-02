@@ -13,6 +13,7 @@
     border-radius: 0.25rem 0rem 0rem 0.25rem;
     color: #FFFFFF;
     border: 1px solid transparent;
+    font-family: 'Rubik', sans-serif;
 }
 
 body {
@@ -20,7 +21,16 @@ body {
 }
 
 button{
-    background-color: var(--green);
+    background-color: var(--green)!important;
+    font-family: 'Rubik', sans-serif;
+}
+
+.current-day{
+    font-family: 'Rubik', sans-serif;
+}
+
+.display-3{
+    font-family: 'Rubik', sans-serif;
 }
 
 header{
@@ -29,5 +39,9 @@ header{
 
 .jumbotron{
     background: var(--blue);
+}
+
+.lead{
+    font-family: 'Rubik', sans-serif;
 }
 
