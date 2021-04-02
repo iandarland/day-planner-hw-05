@@ -37,7 +37,6 @@ $(".hour-box").each(function(index){
 $('.hour-box').each(function(index){
     var toGet = JSON.stringify($(this).text().trim())
     for (var i = 0; i < pulledTodos.length; i++){
-        console.log(pulledTodos[i].timeStamp)
         if(JSON.stringify(pulledTodos[i].timeStamp)===toGet){
             $(this).siblings('input').val(pulledTodos[i].todo);
         };    
