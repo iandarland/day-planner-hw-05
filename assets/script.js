@@ -19,7 +19,6 @@ $('.custom-submit').on('click', function(){
     var todo = $(this).siblings('.custom-input').val();
     var timeStamp = $(this).siblings('.hour-box').text().trim();
     var savedTodos = {timeStamp, todo}
-    var pulledTodos = JSON.parse(localStorage.getItem(saved))|| [];
     pulledTodos.push(savedTodos)
     localStorage.setItem(saved, JSON.stringify(pulledTodos))
 });
