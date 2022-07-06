@@ -20,8 +20,8 @@ body {
     background-color: var(--yellow);
 }
 
-button{
-    background-color: var(--green)!important;
+.btn{
+    background-color: var(--green);
     font-family: 'Rubik', sans-serif;
 }
 
