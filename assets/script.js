@@ -17,7 +17,6 @@ setInterval(update, 1000);
 $('.custom-submit').on('click', function(){
     var todo = $(this).siblings('.custom-input').val();
     var timeStamp = $(this).siblings('.hour-box').text().trim();
-    var savedTodos = {timeStamp, todo}
     pulledTodos[timeStamp] = todo
     localStorage.setItem(saved, JSON.stringify(pulledTodos))
 });
@@ -35,7 +34,6 @@ $(".hour-box").each(function(index){
 $('.hour-box').each(function(index){
     var toGet = $(this).text().trim()
     if(pulledTodos[toGet]){
-        console.log("ALERT")
         $(this).siblings('input').val(pulledTodos[toGet])
     }
 });
