@@ -1,7 +1,7 @@
 //Setting universal variables
 var times = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
 var saved = JSON.stringify(moment().format("MMM Do YY"));  
-var pulledTodos = JSON.parse(localStorage.getItem(saved))|| []
+var pulledTodos = JSON.parse(localStorage.getItem(saved))|| {}
 
 //Setting function update clock
 var update = function() {
@@ -18,7 +18,7 @@ $('.custom-submit').on('click', function(){
     var todo = $(this).siblings('.custom-input').val();
     var timeStamp = $(this).siblings('.hour-box').text().trim();
     var savedTodos = {timeStamp, todo}
-    pulledTodos.push(savedTodos)
+    pulledTodos[timeStamp] = todo
     localStorage.setItem(saved, JSON.stringify(pulledTodos))
 });
 
@@ -33,11 +33,10 @@ $(".hour-box").each(function(index){
 
 //Populating saved values in the dom
 $('.hour-box').each(function(index){
-    var toGet = JSON.stringify($(this).text().trim())
-    for (var i = 0; i < pulledTodos.length; i++){
-        if(JSON.stringify(pulledTodos[i].timeStamp)===toGet){
-            $(this).siblings('input').val(pulledTodos[i].todo);
-        };    
-    };
+    var toGet = $(this).text().trim()
+    if(pulledTodos[toGet]){
+        console.log("ALERT")
+        $(this).siblings('input').val(pulledTodos[toGet])
+    }
 });
 
