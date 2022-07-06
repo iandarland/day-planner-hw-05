@@ -1,5 +1,4 @@
 //Setting universal variables
-var body = $('.container');
 var times = ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM', '5PM'];
 var saved = JSON.stringify(moment().format("MMM Do YY"));  
 var pulledTodos = JSON.parse(localStorage.getItem(saved))|| []
@@ -27,7 +26,7 @@ $('.custom-submit').on('click', function(){
 $(".hour-box").each(function(index){
     if(parseInt(moment($(this).text().trim(), ["h:mm A"]).format("H")) < moment().format('H')){
         $(this).css('background', "#F24E29").siblings('button').css('background', "#F24E29").prop('disabled', 'true').siblings("input").prop('disabled', 'true')
-    }else if (moment($(this).text().trim(), ["h:mm A"]).format("H") === moment().format('H')){
+    }else if (parseInt(moment($(this).text().trim(), ["h:mm A"]).format("H")) === parseInt(moment().format('H'))){
         $(this).css('background', '#F2B9B3').siblings('button').css('background', '#F2B9B3')
     }
 });
